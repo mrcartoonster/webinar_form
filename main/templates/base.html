@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title}{endblock}</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-{% include 'flash_message' %}
+{% include 'flash_message.html' %}
 {% block content%}{% endblock %}
 
 </body>

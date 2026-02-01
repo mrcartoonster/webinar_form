@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Web Form{% endblock %}
+
+{% block content %}
+
+<h1>Webinar Sign-Up</h1>
+
+<p>Please fill out the form below.</p>
+
+<form action="{{ url_for('webinar') }}" method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <div>
+        {{ form.name.label }}
+        {{ form.name(size=20) }}
+    </div>
+
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+
+<p>Click <a href="{{ url_for('index') }}">Here</a> to go back home.</p>
+<p>Have a great one and thanks for stopping by</p>
+{% endblock %}

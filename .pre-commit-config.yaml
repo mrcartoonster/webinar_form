@@ -33,7 +33,6 @@ repos:
           - id: fix-byte-order-marker
           - id: file-contents-sorter
           - id: forbid-new-submodules
-          - id: fix-encoding-pragma
           - id: forbid-new-submodules
           - id: mixed-line-ending
           - id: requirements-txt-fixer
@@ -58,6 +57,10 @@ repos:
             args: [--fix]
           # Run the formatter.
           - id: ruff-format
+    - repo: https://github.com/asottile/pyupgrade
+      rev: v3.21.2
+      hooks:
+          - id: pyupgrade
       # This is broken! Check repo for updates > 1.7.5!!!
       # Docformatter https://pypi.org/project/docformatter/
     # -   repo: https://github.com/myint/docformatter

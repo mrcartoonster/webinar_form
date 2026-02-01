@@ -1,0 +1,11 @@
+{% with messages = get_flash_messagges() %}
+
+{% if messages %}
+
+<div>
+ {% for message in messages %}
+    {{ messsage }}
+ {% endfor %}
+</div>
+{% endif %}
+{% endwith %}

@@ -3,23 +3,92 @@
 {% block title %}Web Form{% endblock %}
 
 {% block content %}
-
 <h1>Webinar Sign-Up</h1>
 
 <p>Please fill out the form below.</p>
 
-<form action="{{ url_for('webinar') }}" method="POST" enctype="multipart/form-data">
-    {{ form.hidden_tag() }}
 
-    <div>
-        {{ form.name.label }}
-        {{ form.name(size=20) }}
-    </div>
+    <form action="{{ url_for('webinar') }}" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.name.label }}
+        </div>
 
-    <div>
-        {{ form.submit() }}
-    </div>
-</form>
+        <div>
+            {{ form.name(placeholder="first name") }}
+            {{ form.last_name(placeholder="last name") }}
+        </div>
+
+        <div>
+            {{ form.email.label }}
+        </div>
+
+        <div>
+            {{ form.email(placeholder="Email Address") }}
+        </div>
+
+        <div>
+            {{ form.work_phone.label }}
+        </div>
+
+        <div>
+            {{ form.work_phone(placeholder="xxx-xxx-xxxx") }}
+        </div>
+
+        <div>
+            {{ form.company.label }}
+        </div>
+        <div>
+            {{ form.company(size=30, placeholder='Company Name') }}
+        </div>
+
+        <div>
+            {{ form.company_address.label }}
+        </div>
+
+        <div>
+            {{ form.company_address(placeholder='Enter Street Address') }}
+        </div>
+        <div>
+            {{ form.street_address.label }}
+        </div>
+
+        <div>
+            {{ form.street_address(placeholder='If Apt or building number') }}
+        </div>
+
+        <br>
+
+        <div>
+            <div>
+                {{ form.city.label }}
+                {{ form.city(placeholder='City') }}
+                {{ form.state.label }}
+                {{ form.state(placeholder='State/Province') }}
+            </div>
+        </div>
+        <br>
+        <div>
+            {{ form.postal(placeholder='Zip/Postal Code') }}
+            {{ form.country(placeholder="Plese Select") }}
+        </div>
+        <br>
+        <div>
+            <div>
+                {{ form.website.label }}
+            </div>
+
+            <div>
+                {{ form.website(placeholder="Company Website") }}
+            </div>
+        </div>
+        <br>
+
+        <div>
+            {{ form.submit() }}
+        </div>
+
+    </form>
 
 <p>Click <a href="{{ url_for('index') }}">Here</a> to go back home.</p>
 <p>Have a great one and thanks for stopping by</p>

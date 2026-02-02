@@ -25,12 +25,8 @@ def webinar():
     form = WebinarForm()
 
     if form.validate_on_submit():
-        flash("Thanks for filling out the form!")
+        flash("Thanks for filling out the form!", "success")
         return redirect(url_for("index"))
-
-    #   elif request.method == 'POST':
-    #       flash("The form didn't record your name. Please try again.")
-    #       return redirect(url_for("webinar"))
 
     return render_template("webinar.html", form=form)
 

@@ -27,7 +27,7 @@ def zip_code(form, field):
     us = re.compile(r"^\d{5}(?:[-\s]\d{4})?$")
 
     us_zip = us.search(field.data)
-    if us_zip is not None:
+    if us_zip is None:
         raise ValidationError(
             message="You need to input a valid US Zip Code!",
         )
